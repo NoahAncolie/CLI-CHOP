@@ -20,11 +20,11 @@ class AdminController < ShopController
             when 1
                 self.create_item
             when 2
-                self.show_items(@all_items_sorted)
+                self.show_items(ItemController.new.all_items_sorted)
             when 3
-                self.show_items(@item_controller.sortByAscending(@all_items_sorted, 2))            
+                self.show_items(@item_controller.sortByAscending(ItemController.new.all_items_sorted, 2))            
             when 4
-                self.show_items(@item_controller.sortByDescending(@all_items_sorted, 2))
+                self.show_items(@item_controller.sortByDescending(ItemController.new.all_items_sorted, 2))
             when 5
                 self.update_item
             when 6

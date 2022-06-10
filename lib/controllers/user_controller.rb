@@ -83,7 +83,7 @@ class UserController < ShopController
         type = gets.chomp.to_i
         case type
             when 1
-                @item_controller.index(list)
+               self.show_items(list)
             when 2
                 self.show_items(@item_controller.sortByAscending(list, 2))
                 @user_view.userDashboard
