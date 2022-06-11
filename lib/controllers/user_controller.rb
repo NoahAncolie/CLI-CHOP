@@ -105,7 +105,7 @@ class UserController < ShopController
                 self.chooseItemTypes
             else
                 self.wrong_choice
-                self.chooseItemSort
+                self.chooseItemSort(list)
         end
     end
 
