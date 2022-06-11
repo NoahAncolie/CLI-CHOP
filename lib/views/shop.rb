@@ -8,14 +8,14 @@ class ShopView
     def menu
         puts "\n\n{{ {  {   { 🏠 | ACCUEIL | 🏠 }   }  } }}"
         puts "\nVous êtes ?"
-        puts "1. #{"Admin".blue} 🛡️"
-        puts "2. #{"User".blue} 👤"
+        puts "1. #{"Administrateur".blue} 🛡️"
+        puts "2. #{"Utilisateur".blue} 👤"
         puts "0. #{"Sortir".red} 🚪🚶"
         print ">"
     end
 
     def item_list(list)
-        puts "\n{{ {  {   { 🦑 | ITEMS | 🦑 }   }  } }}\n\n"
+        puts "\n{{ {  {   { 🦑 | OBJETS | 🦑 }   }  } }}\n\n"
         list.each do |item|
             puts "#{item[0]}.#{item[1]}"
             if (item[7] == "hard drive")

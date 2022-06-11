@@ -25,7 +25,7 @@ class HardDrive < Item
         errors = []
         success = true
         if (@item[:name].length < 3 || @item[:brand].length < 3 || @item[:color].length < 3)
-            errors.push("·Le nom de l'item, de la marque et la couleur doivent faire au moins 3 caractères de long".red)
+            errors.push("·Le nom de l'objet, de la marque et la couleur doivent faire au moins 3 caractères de long".red)
             success = false
         end
         if (@item[:price].to_i <= 0 || @item[:quantity].to_i < 0)

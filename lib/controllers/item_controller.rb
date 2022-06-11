@@ -16,7 +16,7 @@ class ItemController
         @item = item
         if (@item.check)
             @item.save
-            puts "\nItem Crée avec Succès et Ajouté en Base :) !\n\n".green
+            puts "\nObjet Crée avec Succès et Ajouté en Base :) !\n\n".green
         else
             self.createFromType(typeNb, seller)
         end
@@ -67,7 +67,7 @@ class ItemController
             return (self.editing_fields(item_id))
         end
         self.edit(item_id, params)
-        puts "\nL'Item a été édité".green
+        puts "\nL'Objet a été édité".green
         @shop_view.item(self.all[item_id])
         print "Continuer d'éditer ? (y/n)\n>"
         params = gets.chomp
@@ -98,7 +98,7 @@ class ItemController
         end
         item = item_array[i]
         File.open("db/items.csv", 'a+') { |f| f.write("#{item[0]},#{item[1]},#{item[2]},#{item[3]},#{item[4]},#{item[5]},#{item[6]},#{item[7]},#{item[8]},#{item[9]},#{item[10]},#{item[11]}")}
-        puts "\nItem acheté avec succès\n\n".green
+        puts "\nObjet acheté avec succès\n\n".green
     end
 
     def allSorted
@@ -128,7 +128,7 @@ class ItemController
         edited_field = ""
 
         while (edited_field.length <= 0)
-            print "Nouvelle valeure\n>"
+            print "Nouvelle valeur\n>"
             edited_field = gets.chomp
         end
         if (field_id == 2)

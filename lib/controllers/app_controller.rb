@@ -38,7 +38,7 @@ class AppController
                     puts "À Bientôt !"
                     break
                 else
-                    puts "Ce choix n'existe pas, merci de ressayer".yellow
+                    puts "Ce choix n'existe pas, merci de ressayer".red
                     @shop_view.menu
         end
     end

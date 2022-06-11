@@ -18,7 +18,7 @@ class UserController < ShopController
       
         case params
             when 1
-                puts "==> Création de l'Item <=="
+                puts "==> Création de l'Objet <=="
                 puts "Entrez votre numéro de téléphone"
                 phone = gets.chomp
                 self.create_item(phone)
@@ -31,12 +31,13 @@ class UserController < ShopController
             when 5
                 self.show_items(@item_controller.sortByDescending(@all_items_sorted, 2))
             when 6
-                self.chooseItemTypes
+                return (self.chooseItemTypes)
             when 7
                 self.show_items(@item_controller.onlyFromShop(@all_items_sorted))
             when 8
                 self.show_items(@item_controller.onlyFromShop(@all_items_sorted, false))
             when 0
+                puts "A bientôt !"
                 return (self.return_menu)
             else
                 self.wrong_choice
@@ -48,11 +49,11 @@ class UserController < ShopController
     private
 
     def chooseItemTypes
-        puts "Quel Type d'items voulez-vous voir ?"
+        puts "Quel Type d'objets voulez-vous voir ?"
         puts "1.Chaussures"
         puts "2.Posters"
         puts "3.Hard Drives"
-        puts "0.Revenir au dashboard"
+        puts "0.Revenir au tableau de bord"
         print ">"
         type = gets.chomp.to_i
         case type
@@ -72,13 +73,13 @@ class UserController < ShopController
     end
 
     def chooseItemSort(list)
-        puts "Comment voulez-vous les Voir arrangés ?"
-        puts "1.Par ordre Alphabétique"
-        puts "2.Par ordre de prix Croissant"
-        puts "3.Par ordre de prix Décroissant"
-        puts "4.Par ordre de taille Croissante"
-        puts "5.Par ordre de taille Décroissante"
-        puts "0.Revenir au type d'items"
+        puts "Comment voulez-vous les voir arrangés ?"
+        puts "1.Par ordre #{"Alphabétique".yellow}"
+        puts "2.Par ordre de #{"prix Croissant".yellow}"
+        puts "3.Par ordre de #{"prix Décroissant".yellow}"
+        puts "4.Par ordre de #{"taille Croissante".yellow}"
+        puts "5.Par ordre de #{"taille Décroissante".yellow}"
+        puts "0.Revenir au type d'objets"
         print ">"
         type = gets.chomp.to_i
         case type
@@ -109,9 +110,9 @@ class UserController < ShopController
     end
 
     def item_options(item_id)
-        puts "\n1.Buy Item"
-        puts "2.Chose Another"
-        print "0.Revenir au dashboard\n>"
+        puts "\n1.Acheter l'objet"
+        puts "2.Choisir un autre objet"
+        print "0.Revenir au tableau de bord\n>"
         choice = gets.chomp.to_i
         case choice
             when 1

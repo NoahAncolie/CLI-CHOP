@@ -41,15 +41,15 @@ class AdminController < ShopController
 
     def delete_item
         while(true)
-            print "Quel Item voulez-vous Supprimer ? (Il y en a #{@all_items.length})\n>"
+            print "Quel Objet voulez-vous Supprimer ? (Il y en a #{@all_items.length})\n>"
             item_id = gets.chomp.to_i
             if (item_id >= 0 && item_id - 1 <= @all_items.length)
                 break
             else
-                puts "\nItem Inexistant\n\n".red
+                puts "\nObjet Inexistant\n\n".red
             end
         end
-        puts "\nItem trouvé !".green
+        puts "\nObjet trouvé !".green
         @shop_view.item(@all_items[item_id - 1])
         print "Êtes-vous sûr de vouloir le détruire ? (y/n)\n>"
         params = gets.chomp
@@ -57,23 +57,23 @@ class AdminController < ShopController
             return
         end
         @item_controller.destroy(item_id - 1)
-        puts "Item Détruit !".green
+        puts "Objet Détruit !".green
     end
 
     def update_item
         while(true)
-            print "Quel Item voulez-vous Modifier ? (Il y en a #{@all_items.length})\n>"
+            print "Quel Objet voulez-vous Modifier ? (Il y en a #{@all_items.length})\n>"
             item_id = gets.chomp.to_i
             if (item_id >= 0 && item_id - 1 <= @all_items.length)
                 break
             else
-                puts "\nItem Inexistant\n\n".red
+                puts "\nObjet Inexistant\n\n".red
             end
         end
-        puts "\nItem trouvé !".green
+        puts "\nObjet trouvé !".green
         @shop_view.item(@all_items[item_id - 1])
         @item_controller.editing_fields(item_id - 1)
-        puts "Item Édité !".green
+        puts "Objet Édité !".green
     end
 end
 

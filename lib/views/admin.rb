@@ -7,15 +7,15 @@ class AdminView
 
     def adminDashboard
         puts "\n"
-        puts "{{ {  {   { 📦 | INVENTAIRE DE MAGASIN | 📦 }   }  } }}\n"
+        puts "{{ {  {   { 📦 | INVENTAIRE DU MAGASIN | 📦 }   }  } }}\n"
         puts "\nque veux-tu faire ?"
-        puts "1. #{"Ajouter un Item".blue}"
-        puts "2. Afficher tous les Items"
-        puts "3. Afficher tous les Items par #{"prix croissant".yellow}"
-        puts "4. Afficher tous les Items par #{"prix décroissant".yellow}"
-        puts "5. #{"Modifier".green} un Item."
-        puts "6. #{"Supprimer".yellow} un Item"
-        print "0. #{"Quitter le dashboard".red}\n>"
+        puts "1. #{"Ajouter un Objet".blue}"
+        puts "2. Afficher tous les Objet"
+        puts "3. Afficher tous les Objet par #{"prix croissant".yellow}"
+        puts "4. Afficher tous les Objet par #{"prix décroissant".yellow}"
+        puts "5. #{"Modifier".green} un Objet."
+        puts "6. #{"Supprimer".yellow} un Objet"
+        print "0. #{"Quitter l'inventaire".red}\n>"
     end
 end
 

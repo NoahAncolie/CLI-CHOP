@@ -16,23 +16,23 @@ class ShopController
 
     def show_item
         while(true)
-            print "Quel Item voulez-vous voir ? (Il y en a #{@all_items.length})\n>"
+            print "Quel Objet voulez-vous voir ? (Il y en a #{@all_items.length})\n>"
             item_id = gets.chomp.to_i
             if (item_id >= 0 && item_id <= @all_items.length - 1)
                 break
             else
-                puts "\nItem Indisponible\n\n".red
+                puts "\nObjet Indisponible\n\n".red
             end
         end
-        puts "\nItem Disponible".green
+        puts "\nObjet Disponible".green
         @shop_view.item(@all_items[item_id - 1])
         return (item_id - 1)
     end
 
     def create_item(seller = 'shop')
         while (true)
-            puts "\nQuel type d'item voulez-vous ajouter en magasin ?\n\n"
-            puts '1.Item Générique'
+            puts "\nQuel type d'objet voulez-vous ajouter en magasin ?\n\n"
+            puts '1.Objet Générique'
             puts '2.Poster'
             puts '3.Chaussure'
             puts '4.Disque Dur'
@@ -47,6 +47,7 @@ class ShopController
 
     def return_menu
         @shop_view.menu
+        return
     end
 end
 
